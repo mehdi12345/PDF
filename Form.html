@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <title>Form</title>
+</head>
+<body>
+    <div class="container">
+    <form action="convertir.php" method="post">
+        <div class="form-group">
+            <label for="billet">Numéro de billet:</label>
+            
+            <input type="text" class="form-control" id="billet" name="billet">
+          </div>
+       <div class="form-group">
+            <label for="passport">Numéro de passport:</label>
+            <input type="text" class="form-control" id="passport" name="passport">
+          </div>
+        <div class="form-group">
+            <label for="soussigné">Le soussigné:</label>
+            <input type="text" class="form-control" id="soussigné" name="soussigné">
+          </div>
+        <div class="form-group">
+            <div class="row">
+              <div class="col-6">
+                <label for="né">né le:</label>
+            <input type="date" class="form-control" id="né" name="né"></div>
+            <div class="col-6">
+              <label for="a">à:</label>
+              <input type="text" class="form-control" id="a" name="a">
+            </div>
+          </div>
+          </div>
+        <div class="form-group">
+            <label for="citoyenneté">citoyenneté:</label>
+            <input type="text" class="form-control" id="citoyenneté" name="citoyenneté">
+          </div>
+        <div class="form-group">
+            <label for="résidant">résidant à:</label>
+            <input type="text" class="form-control" id="résidant" name="résidant">
+          </div>
+        <div class="form-group">
+            <label for="emplacement">de l'emplacement étranger suivant à:</label>
+            <input type="text" class="form-control" id="emplacement" name="emplacement">
+          </div>
+        <div class="form-group">
+            <label for="transport">moyens de transport:</label>
+            <input type="text" class="form-control" id="transport" name="transport">
+          </div>
+        <div class="form-group">
+            <label for="route">route maritime:</label>
+            <input type="text" class="form-control" id="route" name="route">
+          </div>
+        <div class="form-group">
+            <label for="transports">les moyens de transport suivants:</label>
+            <input type="text" class="form-control" id="transports" name="transports">
+          </div>
+        <div class="form-group">
+            <label for="conditions">le soussigné se trouve dans l'une des conditions suivantes (indiquez une option):</label>
+            <select type="text" class="form-control" id="conditions" name="conditions">
+    <option value="">choose one</option>
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>
+    <option value="E">E</option>
+    <option value="F">F</option>
+    <option value="G">G</option>
+    <option value="H">H</option>
+    <option value="I">I</option>
+    <option value="J">J</option>
+    <option value="K">K</option>
+    <option value="L">L</option>
+              </select>
+          </div>
+        <div class="form-group">
+            <label for="trouve">que la personne inscrite se trouve dans l'une des conditions suivantes:</label>
+            <select type="text" class="form-control" id="trouve" name="trouve">
+    <option value="">choose one</option>
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>
+    <option value="E">E</option>
+    <option value="F">F</option>
+    <option value="G">G</option>
+    <option value="H">H</option>
+
+              </select>
+          </div>
+          <div class="form-group">
+            <label for="raisons">les raisons:</label>
+            <input type="text" class="form-control" id="raisons" name="raisons">
+          </div>
+          <div class="form-group">
+            <label for="adresse">adresse suivante:</label>
+            <input type="text" class="form-control" id="adresse" name="adresse">
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-4">
+            <label for="piazza">piazza\via:</label>
+            <input type="text" class="form-control" id="piazza" name="piazza"></div>
+            <div class="col-4">
+            <label for="n">n.:</label>
+            <input type="text" class="form-control" id="n" name="n"></div>
+            <div class="col-4">
+            <label for="intérieur">intérieur:</label>
+            <input type="text" class="form-control" id="intérieur" name="intérieur"></div>
+          </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-6">
+            <label for="Commun">Commun:</label>
+            <input type="text" class="form-control" id="Commun" name="Commun"></div>
+            <div class="col-6">
+            <label for="code">code postal:</label>
+            <input type="text" class="form-control" id="code" name="code"></div>
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="À">À:</label>
+            <input type="text" class="form-control" id="À" name="À">
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-6">
+            <label for="véhicule">véhicule privé ou propre</label>
+            <input type="text" class="form-control" id="véhicule" name="véhicule"></div>
+            <div class="col-6">
+            <label for="propre">véhicule privé ou propre</label>
+            <input type="text" class="form-control" id="propre" name="propre"></div>
+          </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-4">
+            <label for="fixe">fixe:</label>
+            <input type="text" class="form-control" id="fixe" name="fixe"></div>
+            <div class="col-4">
+            <label for="privé">véhicule privé ou propre</label>
+            <input type="text" class="form-control" id="privé" name="privé"></div>
+            <div class="col-4">
+            <label for="date">date et l'heure:</label>
+            <input type="text" class="form-control" id="date" name="date"></div>
+          </div>
+          </div>
+          <button type="submit" class="btn btn-primary" name="submit">send</button>
+    </form>
+</div>
+</body>
+</html>
