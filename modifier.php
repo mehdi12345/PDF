@@ -1,3 +1,39 @@
+<?php
+if(isset($_POST['submit'])){
+ $BILLET = $_POST['billet'];
+ $PASSPORT=$_POST['passport'];
+ $soussigné=$_POST['soussigne'];
+ $né=$_POST['ne'];
+ $a=$_POST['a'];
+ $citoyenneté=$_POST['citoyennete'];
+ $ville=$_POST['ville'];
+ $codeone=$_POST['codeone'];
+ $rue=$_POST['rue'];
+ $nr=$_POST['nr'];
+ $appartement=$_POST['appartement'];
+ $route=$_POST['route'];
+ $transports=$_POST['transports'];
+ $conditions=$_POST['conditions'];
+ $trouve=$_POST['trouve'];
+ $raisons=$_POST['raisons'];
+ $adresse=$_POST['adresse'];
+ $Commun=$_POST['Commun'];
+ $code=$_POST['code'];
+ $piazza=$_POST['piazza'];
+ $n=$_POST['n'];
+ $intérieur=$_POST['interieur'];
+ $À=$_POST['Aa'];
+ $transport=$_POST['transport'];
+ $type=$_POST['type'];
+ $marque=$_POST['marque'];
+ $immatriculation=$_POST['immatriculation'];
+ $NameVehicule=$_POST['nameveh'];
+$fixe=$_POST['fixe'];
+$privé=$_POST['prive'];
+$date=$_POST['date'];
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,54 +63,47 @@
   <div style="height:50px"></div>
 
     <div class="container">
-    <form action="convertir.php" method="post">
+    <form action="modify.php" method="post">
+    <input type="hidden" class="form-control" id="billet" name="billet1" placeholder="entrer votre numéro de billet" required value="<?php echo $BILLET ?>">
         <div class="form-group"> 
-            <label for="billet">Ticketnummer:</label>
+            <label for="billet">Numéro de billet:</label>
             
-            <input type="text" class="form-control" id="billet" name="billet" placeholder="Geben Sie Ihre Ticketnummer ein
-            " required>
+            <input type="text" class="form-control" id="billet" name="billet" placeholder="entrer votre numéro de billet" required value="<?php echo $BILLET ?>">
           </div>
        <div class="form-group">
-            <label for="passport">Ausweisnummer
-                :</label>
-            <input type="text" class="form-control" id="passport" name="passport" placeholder="Geben Sie Ihre Passnummer ein
-            " required>
+            <label for="passport">Numéro de passport:</label>
+            <input type="text" class="form-control" id="passport" name="passport" placeholder="entrer votre numéro de passport" value="<?php echo $PASSPORT ?>">
           </div>
         <div class="form-group">
-            <label for="soussigné">Vollständiger Name
-                :</label>
-            <input type="text" class="form-control" id="soussigné" name="soussigné" placeholder="Geben Sie Ihren vollständigen Namen ein
-            " required>
+            <label for="soussigné">Nom complet:</label>
+            <input type="text" class="form-control" id="soussigné" name="soussigné" placeholder="entrer votre nom complet" value="<?php echo $soussigné ?>">
           </div>
         <div class="form-group">
             <div class="row">
               <div class="col-md-6">
-                <label for="jour">Geboren die
-                    :</label>
-            <div class="row">
+                <label for="jour">Né le:</label>
+                <div class="row">
                     <div class="col-md-4">
-            <input type="number" class="form-control" id="jour" name="jour" placeholder='Tag' required>
+            <input type="number" class="form-control" id="jour" name="jour" placeholder='jour'> <br>
             </div>
             <div class="col-md-4">
-            <input type="number" class="form-control" id="mois" name="mois" placeholder='Monat' required>
+            <input type="number" class="form-control" id="mois" name="mois" placeholder='mois'> <br>
             </div>
             <div class="col-md-4">
-            <input type="number" class="form-control" id="annee" name="annee" placeholder='Jahr' required>
+            <input type="number" class="form-control" id="annee" name="annee" placeholder='annee'> <br>
             </div>
             </div>
             </div>
             <div class="col-md-6">
-              <label for="a">Beim:</label>
-              <input type="text" class="form-control" id="a" name="a" placeholder="Geben Sie den Geburtsort ein
-              " required>
+              <label for="a">À:</label>
+              <input type="text" class="form-control" id="a" name="a" placeholder="entrer le lieu de naissance " value="<?php echo $a ?>">
             </div>
           </div>
           </div>
         <div class="form-group">
-            <label for="citoyenneté">Staatsbürgerschaft
-                :</label>
-            <select type="text" class="form-control" id="citoyenneté" name="citoyenneté" placeholder="entrer la citoyenneté de soussigné" required>
-              <option value="Maroc" selected="selected">Maroc </option>
+            <label for="citoyenneté">Citoyenneté:</label>
+            <select type="text" class="form-control" id="citoyenneté" name="citoyenneté" placeholder="entrer la citoyenneté de soussigné" >
+              <option value="<?php echo $citoyenneté ?>" selected="selected"><?php echo $citoyenneté ?> </option>
 <option value="Afghanistan">Afghanistan </option>
 <option value="Afrique_Centrale">Afrique_Centrale </option>
 <option value="Afrique_du_sud">Afrique_du_Sud </option>
@@ -332,253 +361,175 @@
           <div class="form-group">
             <div class="row">
               <div class="col-md-6">
-            <label for="ville">Stadt:</label>
-            <input type="text" class="form-control" id="ville" name="ville" ng-model="ville" placeholder="Geben Sie Ihre Stadt ein
-            " required></div>
+            <label for="ville">Ville:</label>
+            <input type="text" class="form-control" id="ville" name="ville" ng-model="ville" placeholder="entrer votre ville" value="<?php echo $ville ?>"></div>
             <div class="col-md-6">
-            <label for="codeone">Postleitzahl
-                :</label>
-            <input type="text" class="form-control" id="codeone" name="codeone" ng-model="code" placeholder="Geben Sie Ihre Postleitzahl ein
-            " required></div>
+            <label for="codeone">Code postal:</label>
+            <input type="text" class="form-control" id="codeone" name="codeone" ng-model="code" placeholder="entrer votre code postal" value="<?php echo $codeone ?>"></div>
           </div>
           </div>
           <div class="form-group">
             <div class="row">
               <div class="col-md-4">
-            <label for="rue">Straße:</label>
-            <input type="text" class="form-control" id="rue" name="rue" ng-model="rue" placeholder="Betreten Sie Ihre Straße
-            " required></div>
+            <label for="rue">Rue:</label>
+            <input type="text" class="form-control" id="rue" name="rue" ng-model="rue" placeholder="entrer votre rue" value="<?php echo $rue ?>"></div>
             <div class="col-md-4">
-            <label for="nr">Anzahl:</label>
-            <input type="text" class="form-control" id="nr" name="nr" ng-model="nr" placeholder="Geben Sie Ihre Hausnummer ein
-            " required></div>
+            <label for="nr">Nr:</label>
+            <input type="text" class="form-control" id="nr" name="nr" ng-model="nr" placeholder="entrer votre numéro de rue" value="<?php echo $nr ?>"></div>
             <div class="col-md-4">
-            <label for="appartement">
-                Anzahl der Wohnungen:</label>
-            <input type="text" class="form-control" id="appartement" ng-model="appartement" name="appartement" placeholder="Geben Sie Ihre Wohnungsnummer ein
-            " required></div>
+            <label for="appartement">Nr d'appartement:</label>
+            <input type="text" class="form-control" id="appartement" ng-model="appartement" name="appartement" placeholder="entrer votre numéro d'appartement" value="<?php echo $appartement ?>"></div>
           </div>
           </div>
         
         
-        <!--<div class="form-group">
-            <label for="route">Seeweg:</label>
-            <select type="text" class="form-control" id="route" name="route" placeholder="route maritime">
-              <option value="">wähle eine Option
-            </option>
-              <option value="Tratta Marritima">La suprema</option>
-              <option value="Tratta Marritima">La superba</option>
-              <option value="Tratta Marritima">Rhapsody</option>
-              <option value="Tratta Marritima">Excellent</option>
-              <option value="Tratta Marritima">Excelsior</option>
-              <option value="Tratta Marritima">Fantastic</option>
-              <option value="TANGERMED/GENOVA">Splendid</option>
-              <option value="M/N MAJESTIC">majestic</option>
-              <option value="M/N MAJESTIC">Gnv atlas</option>
-              <option value="M/N MAJESTIC">Gnv cristal</option>
-              <option value="M/N MAJESTIC">Snav allegra</option>
-              <option value="M/N MAJESTIC">Gnv allegra</option>
-              <option value="M/N MAJESTIC">Gnv azzurra</option>
-              <option value="M/N MAJESTIC">Girolata</option>
-              <select>
-          </div>-->
+       <div class="form-group" >
+            <label for="route">Route maritime:</label>
+            <input type="text" class="form-control" id="route" name="route" placeholder="route maritime" value="Tarta Mariti -TANGERMED - GNOVA le 22/07/2020 à 22:30 - Excellent">
+              
+          </div>
         
         <div class="form-group">
-            <label for="conditions">Der Unterzeichnete befindet sich in einer der folgenden Bedingungen (Option angeben)
-                :</label>
+            <label for="conditions">Le soussigné se trouve dans l'une des conditions suivantes (indiquez une option):</label>
             <select type="text" class="form-control" id="conditions" name="conditions">
-    <option value="">wähle eine Option
-    </option>
-    <option value="A">A -> Transportteam</option>
-    <option value="B">B -> Wanderpersonal
-    </option>
-    <option value="C">C ->Bürger und Einwohner der Europäischen Union
-    </option>
-    <option value="D">D -> Persönliche Gesundheit
-    </option>
-    <option value="E">E -> Grenzarbeiter
-    </option>
-    <option value="F">F -> Unternehmensmitarbeiter
-    </option>
-    <option value="G">G -> Beamte und Agenten
-    </option>
-    <option value="H">H -> Schüler und Studenten
-    </option>
+            <option value="<?php echo $conditions ?>" selected="selected">l'option : <?php echo $conditions ?>  </option>
+    <option value="">choisissez une option</option>
+    <option value="A">A -> équipe de transport</option>
+    <option value="B">B -> Personnel itinérant</option>
+    <option value="C">C -> Les citoyens et résidents de l'Union européenne</option>
+    <option value="D">D -> Personnel de santé</option>
+    <option value="E">E -> Des travailleurs frontaliers</option>
+    <option value="F">F -> le personnel d'entreprises</option>
+    <option value="G">G -> Des fonctionnaires et agents</option>
+    <option value="H">H -> Des élèves et étudiants</option>
     <option value="I">I -> Permanence en Italie</option>
-    <option value="J">J -> Transit auf nationalem Gebiet
-    </option>
-    <option value="K">K -> Reisen in oder aus Mitgliedstaaten der Europäischen Union
-    </option>
-    <option value="L">L -> nichts des oben Genannten
-    </option>
+    <option value="J">J -> Transit sur le territoire national</option>
+    <option value="K">K -> Deplacement en provenance ou à destination des États membres de l'Union européenne</option>
+    <option value="L">L -> aucun des cas ci-dessus</option>
               </select> 
           </div>
         <div class="form-group">
-            <label for="trouve">Der Registrant befindet sich in einer der folgenden Bedingungen
-                :</label>
+            <label for="trouve">l'inscrit est dans l'une des conditions suivantes':</label>
             <select type="text" class="form-control" id="trouve" name="trouve">
-    <option value="">wähle eine Option
-    </option>
-    <option value="a">A -> ist Staatsbürger eines Mitgliedstaats der Europäischen Union
-    </option>
-    <option value="b">B -> wohnt in einem Mitgliedstaat der Europäischen Union
-    </option>
-    <option value="c">C -> verheiratet oder zivil vereint oder zusammenlebend mit einem Bürger eines Mitgliedstaats der Europäischen Union
-    </option>
-    <option value="d">D -> ist ein direkter Nachkomme
-    </option>
-    <option value="e">E -> es ist eine direkte absteigende oder aufsteigende Abhängigkeit
-    </option>
-    <option value="f">F -> ist ein abhängiges Familienmitglied oder ein Lebenspartner
-    </option>
-    <option value="g">G -> lebt in einem der folgenden Länder: Algerien, Australien, Kanada, Georgien, Giappone, Montenegro, Marokko, Nuova Zelanda, Ruanda, Serbien, Repubblica di Corea, Tailandia, Tunesien, Uruguay;
-    </option>
-    <option value="h">H -> Umzüge aus Gesundheits-, Arbeits-, Studien- oder absoluten Notgründen oder um nach Hause zurückzukehren
-    </option>
+            <option value="<?php echo $trouve ?>" selected="selected">l'option : <?php echo $trouve ?>  </option>
+    <option value="">choisissez une option</option>
+    <option value="a">A -> est citoyen d'un Etat membre de l'Union europeenne </option>
+    <option value="b">B -> reside dans un Etat membre de l'Union europeenne</option>
+    <option value="c">C -> marié ou uni civilement ou cohabitant avec un citoyen d'un État membre de l'Union européenne</option>
+    <option value="d">D -> est un descendant direct</option>
+    <option value="e">E -> c'est une personne à charge directe descendante ou ascendante</option>
+    <option value="f">F -> est un membre de la famille à charge ou un partenaire cohabitant</option>
+    <option value="g">G -> réside dans l'un des pays suivants: Algeria, Australia, Canada, Georgia, Giappone, Montenegro, Marocco, Nuova Zelanda, Ruanda, Serbia, Repubblica di Corea, Tailandia, Tunisia, Uruguay;</option>
+    <option value="h">H -> déménagements pour des raisons de santé, de travail, d'études ou d'urgence absolue ou pour rentrer chez eux</option>
 
               </select>
           </div>
           <div class="form-group">
-            <label for="raisons">Gründe für die Reise
-                :</label>
-            <select type="text" class="form-control" id="raisons" name="raisons">
-              <option value="">Wählen Sie Ihren Reisegrund
-            </option>
-              <option value="tourisme">Tourismus</option>
-              <option value="travail">Job</option>
-              <option value="travail">Familie</option>
-              <option value="maladie">Krankheit</option>
+            <label for="raisons">Les raisons de voyage:</label>
+            <select type="text" class="form-control" id="raisons" name="raisons" value="<?php echo $raisons ?>">
+            <option value="<?php echo $raisons ?>" selected="selected">l'option : <?php echo $raisons ?>  </option>
+              <option value="">choisissez votre raison de voyage</option>
+              <option value="tourisme">tourisme</option>
+              <option value="travail">travail</option>
+              <option value="travail">familiale</option>
+              <option value="maladie">maladie</option>
               
              </select>
           </div>
           <div class="form-group">
-            <label for="séjours">Ich habe nach den letzten 14 Tagen Aufenthalte / Transits in Ländern und Gebieten unter der folgenden Adresse durchgeführt
-                :</label>
-            <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Geben Sie die Adresse ein, an der Sie übernachtet haben
-
-
-            ">
+            <label for="séjours">avoir effectué des séjours / transits dans les pays et territoires suivant saucours des 14 derniers jours dans l'adresse suivante:</label>
+            <input type="text" class="form-control" id="adresse" name="adresse" placeholder="entrer l'adresse où vous avez effectué des séjours" value="<?php echo $adresse ?>">
 
           </div>
           <div style="height: 10px;"></div>
           <hr style="border: 1px solid black;">
           <div style="height: 5px;"></div>
-          <center><h2>Zieladresse </h2></center>
+          <center><h2>Adresse de destination</h2></center>
           <div style="height: 25px;"></div>
 
           <div class="form-group">
             <div class="row">
               <div class="col-md-6">
-            <label for="Commun">Stadt:</label>
-            <input type="text" class="form-control" id="Commun" name="Commun" placeholder="Zielstadt eingeben
-            "  value={{ville}} required></div>
+            <label for="Commun">Ville:</label>
+            <input type="text" class="form-control" id="Commun" name="Commun" placeholder="entrer la ville de destination"  value="<?php echo $Commun ?>"></div>
             <div class="col-md-6">
-            <label for="code">Postleitzahl
-                :</label>
-            <input type="text" class="form-control" id="code" name="code" placeholder="Geben Sie die Postleitzahl der Zielstadt ein
-            "  value={{code}} required></div>
+            <label for="code">Code postal:</label>
+            <input type="text" class="form-control" id="code" name="code" placeholder="entrer code postal ville  de destination"  value="<?php echo $code ?>"></div>
           </div>
           </div>
           <div class="form-group">
             <div class="row">
               <div class="col-md-4">
-            <label for="piazza">Straße:</label>
-            <input type="text" class="form-control" id="piazza" name="piazza" placeholder="Geben Sie die Zielstraße ein
-            "  value={{rue}} required></div>
+            <label for="piazza">Rue:</label>
+            <input type="text" class="form-control" id="piazza" name="piazza" placeholder="entrer le rue de destination"  value="<?php echo $piazza ?>"></div>
             <div class="col-md-4">
-            <label for="n">Anzahl:</label>
-            <input type="text" class="form-control" id="n" name="n" placeholder="Geben Sie die Zielstraßennummer ein
-            "  value={{nr}} required></div>
+            <label for="n">Nr:</label>
+            <input type="text" class="form-control" id="n" name="n" placeholder="entrer le numéro de rue de destination"  value="<?php echo $n ?>"></div>
             <div class="col-md-4">
-            <label for="intérieur">Anzahl der Wohnungen
-                :</label>
-            <input type="text" class="form-control" id="intérieur" name="intérieur" placeholder="Geben Sie die Nummer der Zielwohnung ein
-            "  value={{appartement}} required></div>
+            <label for="intérieur">Nr d'appartement:</label>
+            <input type="text" class="form-control" id="intérieur" name="intérieur" placeholder="entrer le numéro d'appartement de destination"  value="<?php echo $intérieur ?>"></div>
           </div>
           </div>
-
-          
-          
-          
           <div class="form-group">
-            <label for="À">Im
-                :</label>
-            <select type="text" class="form-control" id="À" name="À" placeholder="entrer le nom de personne que vous allez résider avec " required>
+            <label for="À">Chez:</label>
+            <select type="text" class="form-control" id="À" name="À" placeholder="entrer le nom de personne que vous allez résider avec ">
+            <option value="<?php echo $À ?>" selected="selected">l'option : <?php echo $À ?>  </option>
                 <option value="">choisissez une option</option>
-                <option value="Mi casa">Mein Haus</option>
-                <option value="altro">andere</option>
+                <option value="Mi casa">Propre maison</option>
+                <option value="altro">autre</option>
                 </select>
           </div>
           <div class="form-group">
-            <label for="transport">Transportmittel zum Bestimmungsort
-                :</label>
+            <label for="transport">Moyen de transport vers destination:</label>
             <select type="text" class="form-control" id="transport" name="transport">
-              <option value="">wähle eine Option
-            </option>
-    <option value="privé">mit Privatfahrzeug (Auto-Motorrad ...)
-    </option>
-    <option value="public">Fußgänger
-    </option>
+            <option value="<?php echo $transport ?>" selected="selected">l'option : <?php echo $transport ?>  </option>
+              <option value="">choisissez une option</option>
+    <option value="privé">avec véhicule privé (voiture-moto...)</option>
+    <option value="public">piéton  </option>
             </select>
           </div>
           <div class="form-group">
-            <label for="type">Fahrzeugtyp
-                :</label>
+            <label for="type">type de véhicule:</label>
             <select type="text" class="form-control" id="type" name="type">
-              <option value="">wähle eine Option
-            </option>
-    <option value="motos">Motorräder
-    </option>
-    <option value="voiture">Wagen
-    </option>
-    <option value="voiture avec chariot">Auto mit Wagen
-    </option>
-    <option value="camion ">LKW</option>
-    <option value="camion avec chariot">LKW mit Wagen
-    </option>
-    <option value="bus">Bus</option>
-    <option value="bus avec chariot" >Bus mit Wagen
-    </option>
+              <option value="">choisissez une option</option>
+              <option value="<?php echo $type ?>" selected="selected">l'option : <?php echo $type ?>  </option>
+    <option value="motos">motos</option>
+    <option value="voiture">voiture</option>
+    <option value="voiture avec chariot">voiture avec chariot</option>
+    <option value="camion ">camion</option>
+    <option value="camion avec chariot">camion avec chariot</option>
+    <option value="bus">bus</option>
+    <option value="bus avec chariot" >bus avec chariot</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="marque">Fahrzeugmarke
-                :</label>
-            <input type="text" class="form-control" id="marque" name="marque" placeholder="Geben Sie Ihre Fahrzeugmarke ein
-            ">
+            <label for="marque">Marque de véhicule:</label>
+            <input type="text" class="form-control" id="marque" name="marque" placeholder="entrer votre marque de véhicule" value="<?php echo $marque ?>">
           </div>
         <div class="form-group">
-            <label for="plaque d'immatriculation">Nummernschild
-                :</label>
-            <input type="text" class="form-control" id="immatriculation" name="immatriculation" placeholder="Geben Sie das Nummernschild ein
-            ">
+            <label for="plaque d'immatriculation">plaque d'immatriculation:</label>
+            <input type="text" class="form-control" id="immatriculation" name="immatriculation" placeholder="entrer la plaque d'immatriculation" value="<?php echo $immatriculation ?>">
               
           </div>
           <div class="form-group">
-            <label for="name">Vollständiger Name des Fahrzeugbesitzers
-:</label>
-            <input type="text" class="form-control" id="name" name="véhiculeName" placeholder="Geben Sie den vollständigen Namen des Fahrzeugbesitzers ein
-">
+            <label for="name">Nom complet de propriéte de véhicule:</label>
+            <input type="text" class="form-control" id="name" name="véhiculeName" placeholder="entrer le nom complet de propriéte de véhicule" value="<?php echo $NameVehicule ?>">
               
           </div>
           <div class="form-group">
             <div class="row">
               <div class="col-md-4">
-            <label for="fixe">Fest:</label>
-            <input type="text" class="form-control" id="fixe" name="fixe" placeholder="Geben Sie Ihre Festnetznummer ein
-            "></div>
+            <label for="fixe">Fixe:</label>
+            <input type="text" class="form-control" id="fixe" name="fixe" placeholder="entrer votre numéro fixe" value="<?php echo $fixe ?>"></div>
             <div class="col-md-4">
-            <label for="privé">Handy, Mobiltelefon
-                :</label>
-            <input type="text" class="form-control" id="privé" name="privé" placeholder="Gib deine Handynummer ein
-            " ></div>
+            <label for="privé">Mobile:</label>
+            <input type="text" class="form-control" id="privé" name="privé" placeholder="entrer votre numéro mobile" value="<?php echo $privé ?>" ></div>
             <div class="col-md-4">
-            <label for="date">Datum (und Uhrzeit
-                :</label>
+            <label for="date">Date et l'heure:</label>
             <input type="text" class="form-control" id="date" name="date" onclick="change()"></div>
           </div>
           </div> <br>
-          <button type="submit" class="btn btn-primary" name="submit">Senden</button>
+          <button type="submit" class="btn btn-primary" name="submit">Modifier</button>
     </form>
 </div>
 
@@ -611,3 +562,9 @@ $(document).on("click", function(event){
 </script>
 </body>
 </html>
+<?php
+}
+else{
+    header('location:Form.html');
+}
+?>

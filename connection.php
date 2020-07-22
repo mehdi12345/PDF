@@ -4,7 +4,7 @@
      
      $conn=mysqli_connect("localhost:3306","sevensea_user","azerty@987","sevensea_passport");
  /* CREATE TABLE donnees(
-                     billet VARCHAR(255) PRIMARY KEY,
+                     billet VARCHAR(255),
                      passport VARCHAR(255),
                      soussigne VARCHAR(255),
                      ne VARCHAR(255),
@@ -17,7 +17,6 @@
                      appartement VARCHAR(255),
                      
                      route VARCHAR(255),
-                     transports VARCHAR(255),
                      conditions VARCHAR(255),
                      trouve VARCHAR(255),
                      raisons VARCHAR(255),
@@ -33,6 +32,7 @@
                      type VARCHAR(255),
                      marque VARCHAR(255),
                      immatriculation VARCHAR(255),
+                     nameveh VARCHAR(255),
                      fixe VARCHAR(255),
                      prive VARCHAR(255),
                      date VARCHAR(255)

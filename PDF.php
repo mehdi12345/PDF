@@ -7,25 +7,28 @@ if(isset($_POST['submit'])){
  $né=$_POST['ne'];
  $a=$_POST['a'];
  $citoyenneté=$_POST['citoyennete'];
- $résidant=$_POST['residant'];
- $emplacement=$_POST['emplacement'];
- $transport=$_POST['transport'];
- $type=$_POST['type'];
- $immatriculation=$_POST['immatriculation'];
- $route=$_POST['route'];
+ $ville=$_POST['ville'];
+ $codeone=$_POST['codeone'];
+ $rue=$_POST['rue'];
+ $nr=$_POST['nr'];
+ $appartement=$_POST['appartement'];
+ $routes=$_POST['routes'];
  $transports=$_POST['transports'];
  $conditions=$_POST['conditions'];
  $trouve=$_POST['trouve'];
  $raisons=$_POST['raisons'];
- $séjours=$_POST['sejours'];
  $adresse=$_POST['adresse'];
+ $Commun=$_POST['Commun'];
+ $code=$_POST['code'];
  $piazza=$_POST['piazza'];
  $n=$_POST['n'];
  $intérieur=$_POST['interieur'];
- $Commun=$_POST['Commun'];
- $code=$_POST['code'];
  $À=$_POST['Aa'];
- $véhicule=$_POST['vehicule'];
+ $transport=$_POST['transport'];
+ $type=$_POST['type'];
+ $marque=$_POST['marque'];
+ $immatriculation=$_POST['immatriculation'];
+ $NameVehicule=$_POST['nameveh'];
 $fixe=$_POST['fixe'];
 $privé=$_POST['prive'];
 $date=$_POST['date'];
@@ -70,7 +73,7 @@ if(empty($code)){
     $code='_________________ ';
 }
 if(empty($À)){
-    $À='__________________________________________________________________________________ ';
+    $À='___________________ ';
 }
 
 if(empty($fixe)){
@@ -83,83 +86,89 @@ if(empty($date)){
     $date='_________________________ ';
 }
 if(empty($trouve)){
-    $trouve='_________________________________________________________________________________________________s________';
+    $trouve='________________________________________________________________________________________';
 }
 if(empty($type)){
-    $type='_____________________________________________________________________________________________________________________ ';
+    $type='__________________ ';
+}
+if(empty($marque)){
+    $marque='__________________ ';
+}
+if(empty($immatriculation)){
+    $immatriculation='__________________ ';
 }
 if(empty($séjours)){
-    $séjours='_________________________________________________________________________________________________';
+    $séjours='_____________________';
 }
 if(empty($route)){
-    $route='_____________________________________________________________________________________________________________________';
+    $route='___________________________________________';
 }
 if(empty($conditions)){
-    $conditions='_____________________________________________________________________________________________________________________';
+    $conditions='_______________________________________________________';
 }
-if($conditions=="équipe de transport"){
+if($conditions=="A"){
     $A="<b style='color:red;font-width:bolder'>-----></b> <b style='color:green'> ";
 }
-if($conditions=="Personnel itinérant"){
+if($conditions=="B"){
     $B="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-if($conditions=="Les citoyens et résidents de l'Union européenne"){
+if($conditions=="C"){
     $C="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-if($conditions=="Personnel de santé"){
+if($conditions=="D"){
     $D="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-if($conditions=="Des travailleurs frontaliers"){
+if($conditions=="E"){
     $E="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-if($conditions=="le personnel d'entreprises"){
+if($conditions=="F"){
     $F="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-if($conditions=="Des fonctionnaires et agents"){
+if($conditions=="G"){
     $G="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-if($conditions=="Des élèves et étudiants"){
+if($conditions=="H"){
     $H="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-if($conditions=="Permanence en Italie"){
+if($conditions=="I"){
     $I="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-if($conditions=="Transit sur le territoire national"){
+if($conditions=="J"){
     $J="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-if($conditions==" Deplacement en provenance ou à destination des États membres de l'Union européenne"){
+if($conditions=="K"){
     $K="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-if($conditions=="aucun des cas ci-dessus"){
+if($conditions=="L"){
     $L="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-if($trouve=="est citoyen d'un État membre de l'Union européenne "){
+if($trouve=="a"){
     $aa="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-if($trouve=="réside dans un État membre de l'Union européenne"){
+if($trouve=="b"){
     $b="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-if($trouve=="marié ou uni civilement ou cohabitant avec un citoyen d'un État membre de l'Union européenne"){
+if($trouve=="c"){
     $c="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-if($trouve=="est un descendant direct"){
+if($trouve=="d"){
     $d="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-if($trouve=="c'est une personne à charge directe descendante ou ascendante"){
+if($trouve=="e"){
     $e="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-if($trouve=="est un membre de la famille à charge ou un partenaire cohabitant"){
+if($trouve=="f"){
     $f="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-if($trouve=="réside dans l'un des pays suivants: Algeria, Australia, Canada, Georgia, Giappone, Montenegro, Marocco, Nuova Zelanda, Ruanda, Serbia, Repubblica di Corea, Tailandia, Tunisia, Uruguay;"){
+if($trouve=="g"){
     $g="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-if($trouve=="déménagements pour des raisons de santé, de travail, d'études ou d'urgence absolue ou pour rentrer chez eux"){
+if($trouve=="h"){
     $h="<b style='color:red'>-----></b> <b style='color:green'> ";
 }
-$pdf->writeHTML(" GN-".$BILLET." <br><br>
+$pdf->writeHTML(" <h4>GN-".$BILLET."</h4>
 <div style='text-align:center;font-size:11px'><b><u>AUTODICHIARAZIONE GIUSTIFICATIVA DELLO SPOSTAMENTO IN CASO DI ENTRATA IN ITALIA DALL’ESTERO</b></u></div>
-<div style='text-align:center;font-size:17px'><b><u>Auto-déclaration justificatif dudéplacement en cas d'entrée en Italie de l'étranger</b> </u></div>
+<div style='text-align:center;font-size:16px'><b><u>Auto-déclaration justificatif dudéplacement en cas d'entrée en Italie de l'étranger</b> </u></div>
 <div style='text-align:center;font-size:17px'><b>(da consegnare al vettore in caso di utilizzo di mezzo pubblico di trasporto)</b></div><br><br>
 <p style='font-size:12px'>Il/la sottoscritto/a   <b style='color:blue'>".$soussigné."</b>, nato/a il    <b style='color:blue'>".$né."</b> a <b style='color:blue'>".$a."</b>, cittadinanza   <b style='color:blue'>".$citoyenneté." </b>, residente a   <b style='color:blue'>".$ville." </b>, via  <b style='color:blue'>".$rue." ".$nr." ". $appartement." </b>, consapevole delle sanzioni penali previste in caso di dichiarazioni mendaci e di formazione o uso di atti falsi, nonché delle sanzioni previste dall’articolo 2 del decreto-legge 16 maggio 2020, n. 33<br><br>
 <h3 style='text-align:center;front-size:18px'>DICHIARA SOTTO LA PROPRIA RESPONSABILITÀ </h3>
@@ -168,7 +177,7 @@ $pdf->writeHTML(" GN-".$BILLET." <br><br>
 <p style='font-size:12px'>1) di essere a conoscenza delle misure di contenimento del contagio da Covid-19 vigenti in Italia e, in particolare, delle prescrizioni contenute nel decreto del Presidente del Consiglio dei Ministri 17 maggio 2020;<br><br>
 2) di non essere sottoposto alla misura della quarantena e di non essere risultato positivo al Covid-19;<br><br>
 3) di entrare in Italia dalla seguente località estera <b style='color:blue'>".$citoyenneté." </b>, tramite il seguente mezzo di trasporto (in caso di mezzo privato indicare tipo di veicolo e targa; in caso di mezzo pubblico estremi del volo / corsa ferroviaria o stradale / tratta marittima);<br>
-<b style='color:blue'>".$route."</b><br><br>
+<b style='color:blue'>".$routes."</b><br><br>
 4)di avere effettuato negli ultimi 14 giorni soggiorni / transiti nei seguenti Paesi e territori: <br>
 <b style='color:blue'>".$adresse." </b><br><br>
 5) il/la sottoscritto/a si trova in una delle seguenti condizioni (indicare una opzione);<br><br>
@@ -179,8 +188,9 @@ $pdf->writeHTML(" GN-".$BILLET." <br><br>
 ".$E."E) lavoratori transfrontalieri in ingresso e in uscita dal territorio nazionale per comprovati motivi di lavoro e per il conseguente rientro nella propria residenza, abitazione o dimora;</b><br><br>
 ".$F."F) personale di imprese aventi sede legale o secondaria in Italia per spostamenti all'estero per comprovate esigenze lavorative di durata non superiore a 120 ore;</b> <br><br>
 ".$G."G) funzionari e agenti, comunque denominati, dell'Unione europea o di organizzazioni internazionali, agenti diplomatici, personale amministrativo e tecnico delle missioni diplomatiche, funzionari e impiegati consolari, personale militare nell’esercizio delle loro funzioni; </b><br><br>
-".$H."H) alunni e studenti per la frequenza di un corso di studi in uno Stato diverso da quello di residenza, abitazione o dimora, nel quale ritornano ogni giorno o almeno una volta la settimana;</b><br><br>
-".$I."I) permanenza in Italia per lavoro, salute o urgenza assoluta di durata massima pari a 120 ore; </b><br><br>
+".$H."H) alunni e studenti per la frequenza di un corso di studi in uno Stato diverso da quello di residenza, abitazione o dimora, nel quale ritornano ogni giorno o almeno una volta la settimana;</b><br><br></p>
+<h4>GN-".$BILLET."</h4>
+<p style='font-size:12px'>".$I."I) permanenza in Italia per lavoro, salute o urgenza assoluta di durata massima pari a 120 ore; </b><br><br>
 ".$J."J) transito sul territorio nazionale per fare rientro nel proprio Paese di residenza, abitazione o dimora (durata massima della permanenza in Italia: 36 ore);</b> <br><br>
 ".$K."K) spostamento da o per Stati membri dell’Unione Europea, Stati parte dell’accordo di Schengen, Regno Unito di Gran Bretagna e Irlanda del nord, Andorra, Principato di Monaco, Repubblica di San Marino, Stato della Città del Vaticano, senza soggiorni in Stati o territori diversi nei 14 giorni anteriori all’ingresso in Italia;</b><br><br>
 ".$L."L) nessuno dei casi sopra indicati;Aucundescas ci-dessus. <br><br>
@@ -195,7 +205,9 @@ Se è stata indicata la lettera L), compilare anche le voci seguenti:</b><br><br
 ".$e."E) è discendente o ascendente diretto a carico di persone indicate alle lettere A), B) o C);</b><br><br>
 ".$f."F) è familiare a carico o convivente con una delle persone indicate alle lettere A, B) o C);</b><br><br>
 ".$g."G) è residente in uno dei seguenti Paesi: Algeria, Australia, Canada, Georgia, Giappone, Montenegro, Marocco, Nuova Zelanda, Ruanda, Serbia, Repubblica di Corea, Tailandia, Tunisia, Uruguay; </b><br><br>
-".$h."H) si sposta per motivi di salute, lavoro, studio o di assoluta urgenza o per il rientro al proprio domicilio, abitazione o residenza (indicare in modo specifico, concreto e verificabile i motivi dello spostamento e la loro urgenza e necessità):</b> <br><br>
+".$h."H) si sposta per motivi di salute, lavoro, studio o di assoluta urgenza o per il rientro al proprio domicilio, abitazione o residenza (indicare in modo specifico, concreto e verificabile i motivi dello spostamento e la loro urgenza e necessità):</b> <br>
+<b style='color:blue'>".$raisons."</b>
+<br><br>
 7) che svolgerà il periodo di 14 giorni di sorveglianza sanitaria e l’isolamento fiduciario nell’abitazione/dimora situata al seguente indirizzo;<br>
 piazza/via<b style='color:blue'>".$piazza."</b> n. <b style='color:blue'>".$n."</b> <br>
 interno <b style='color:blue'>".$intérieur."</b><br>
@@ -203,13 +215,13 @@ Comune   <b style='color:blue'>".$Commun."</b> <br>
 CAP <b style='color:blue'>".$code."</b> <br>
 Presso: <b style='color:blue'>".$À."</b> <br><br> 
 8) che, una volta giunto/a in Italia, raggiungerà direttamente e nel minore tempo possibile l’indirizzo indicato al punto precedente tramite il seguente mezzo privato o proprio: <br>
-moyen de transport : <b style='color:blue'> ".$transport."</b> type de véhicule : <b style='color:blue'>".$type."</b> marque : <b style='color:blue'>".$marque."</b> plaque d'immatriculation : <b style='color:blue'>".$immatriculation."</b><br><br>
+mezzi di trasporto : <b style='color:blue'> ".$transport."</b> tipo di veicolo: <b style='color:blue'>".$type."</b> marca : <b style='color:blue'>".$marque."</b> targa : <b style='color:blue'>".$immatriculation."</b> Nome della proprietà del veicolo:  <b style='color:blue'>".$NameVehicule."</b><br><br>
 9) che i recapiti telefonici presso cui ricevere le comunicazioni durante l’intero periodo di sorveglianza sanitaria e isolamento fiduciario sono i seguenti: <br> <br> 
 
 fisso: <b style='color:blue'>".$fixe."</b> mobile: <b style='color:blue'>".$privé."</b>  <br> <br> 
 
 Luogo, data e ora della presente dichiarazione;<b style='color:blue'> TANGER le ".$date."</b> <br><br>
-".$PASSPORT."
+<b style='color:blue'>".$PASSPORT."</b>
 <br>
 
 Firma del dichiarante; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;		per il Vettore;

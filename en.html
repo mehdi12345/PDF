@@ -38,25 +38,36 @@
        <div class="form-group">
             <label for="passport">Numéro de passport:</label>
             <input type="text" class="form-control" id="passport" name="passport" placeholder="Passport number
-            ">
+            " required>
           </div>
         <div class="form-group">
             <label for="soussigné">Full Name
                 :</label>
             <input type="text" class="form-control" id="soussigné" name="soussigné" placeholder="enter your full name
-            ">
+            " required>
           </div>
         <div class="form-group">
             <div class="row">
-              <div class="col-6">
-                <label for="né">Born the
+              <div class="col-md-6">
+                <label for="jour">Born the
                     :</label>
-            <input type="date" class="form-control" id="né" name="né"></div>
-            <div class="col-6">
+            <div class="row">
+                    <div class="col-md-4">
+            <input type="number" class="form-control" id="jour" name="jour" placeholder='day' required> <br>
+            </div>
+            <div class="col-md-4">
+            <input type="number" class="form-control" id="mois" name="mois" placeholder='month' required> <br>
+            </div>
+            <div class="col-md-4">
+            <input type="number" class="form-control" id="annee" name="annee" placeholder='year' required> <br>
+            </div>
+            </div>
+            </div>
+            <div class="col-md-6">
               <label for="a">In
                 :</label>
               <input type="text" class="form-control" id="a" name="a" placeholder="enter the place of birth
-              ">
+              " required>
             </div>
           </div>
           </div>
@@ -64,7 +75,7 @@
             <label for="citoyenneté">Citizenship
                 :</label>
             <select type="text" class="form-control" id="citoyenneté" name="citoyenneté" placeholder="enter citizenship of undersigned
-            ">
+            " required>
               <option value="Maroc" selected="selected">Maroc </option>
 <option value="Afghanistan">Afghanistan </option>
 <option value="Afrique_Centrale">Afrique_Centrale </option>
@@ -322,36 +333,36 @@
           </div>
           <div class="form-group">
             <div class="row">
-              <div class="col-6">
+              <div class="col-md-6">
             <label for="ville">City:</label>
             <input type="text" class="form-control" id="ville" name="ville" ng-model="ville" placeholder="enter your city
-            "></div>
-            <div class="col-6">
+            " required></div>
+            <div class="col-md-6">
             <label for="codeone">Postal code:</label>
             <input type="text" class="form-control" id="codeone" name="codeone" ng-model="code" placeholder="enter your postal code
-            "></div>
+            " required></div>
           </div>
           </div>
           <div class="form-group">
             <div class="row">
-              <div class="col-4">
+              <div class="col-md-4">
             <label for="rue">Street:</label>
             <input type="text" class="form-control" id="rue" name="rue" ng-model="rue" placeholder="enter your street
-            "></div>
-            <div class="col-4">
+            " required></div>
+            <div class="col-md-4">
             <label for="nr">number:</label>
             <input type="text" class="form-control" id="nr" name="nr" ng-model="nr" placeholder="enter your house number
-            "></div>
-            <div class="col-4">
+            " required></div>
+            <div class="col-md-4">
             <label for="appartement">Apartment number
                 :</label>
             <input type="text" class="form-control" id="appartement" ng-model="appartement" name="appartement" placeholder="enter your apartment number
-            "></div>
+            " required></div>
           </div>
           </div>
         
         
-        <div class="form-group">
+    <!--    <div class="form-group">
             <label for="route">Sea route
                 :</label>
             <select type="text" class="form-control" id="route" name="route" placeholder="route maritime">
@@ -371,36 +382,36 @@
               <option value="M/N MAJESTIC">Gnv allegra</option>
               <option value="M/N MAJESTIC">Gnv azzurra</option>
               <option value="M/N MAJESTIC">Girolata</option>
-              <select>
-          </div>
+              </select>
+          </div>-->
         
         <div class="form-group">
             <label for="conditions">The undersigned is in one of the following conditions (indicate an option):
             </label>
             <select type="text" class="form-control" id="conditions" name="conditions">
     <option value="">choose an option</option>
-    <option value="équipe de transport">A -> transport team
+    <option value="A">A -> transport team
     </option>
-    <option value="Personnel itinérant">B -> Itinerant staff
+    <option value="B">B -> Itinerant staff
     </option>
-    <option value="Les citoyens et résidents de l'Union européenne">C -> Citizens and residents of the European Union
+    <option value="C">C -> Citizens and residents of the European Union
     </option>
-    <option value="Personnel de santé">D -> Personal health
+    <option value="D">D -> Personal health
     </option>
-    <option value="Des travailleurs frontaliers">E -> Frontier workers
+    <option value="E">E -> Frontier workers
 
     </option>
-    <option value="le personnel d'entreprises">F -> company staff
+    <option value="F">F -> company staff
     </option>
-    <option value="Des fonctionnaires et agents">G -> Officials and agents
+    <option value="G">G -> Officials and agents
     </option>
-    <option value="Des élèves et étudiants">H -> Pupils and students</option>
-    <option value="Permanence en Italie">I -> Permanence en Italie</option>
-    <option value="Transit sur le territoire national">J -> Transit on national territory
+    <option value="H">H -> Pupils and students</option>
+    <option value="I">I -> Permanence en Italie</option>
+    <option value="J">J -> Transit on national territory
     </option>
-    <option value=" Deplacement en provenance ou à destination des États membres de l'Union européenne">K -> Travel to or from European Union member states
+    <option value="K">K -> Travel to or from European Union member states
     </option>
-    <option value="aucun des cas ci-dessus">L -> none of the above
+    <option value="L">L -> none of the above
     </option>
               </select> 
           </div>
@@ -409,21 +420,21 @@
             </label>
             <select type="text" class="form-control" id="trouve" name="trouve">
     <option value="">choisissez une option</option>
-    <option value="est citoyen d'un État membre de l'Union européenne ">A -> is a citizen of a member state of the European Union
+    <option value="a">A -> is a citizen of a member state of the European Union
     </option>
-    <option value="réside dans un État membre de l'Union européenne">B -> resides in a member state of the European Union
+    <option value="b">B -> resides in a member state of the European Union
     </option>
-    <option value="marié ou uni civilement ou cohabitant avec un citoyen d'un État membre de l'Union européenne">C ->married or in a civil union or cohabiting with a citizen of a Member State of the European Union
+    <option value="c">C ->married or in a civil union or cohabiting with a citizen of a Member State of the European Union
     </option>
-    <option value="est un descendant direct">D -> is a direct descendant
+    <option value="d">D -> is a direct descendant
     </option>
-    <option value="c'est une personne à charge directe descendante ou ascendante">E ->he is a top-down or bottom-up dependent
+    <option value="e">E ->he is a top-down or bottom-up dependent
     </option>
-    <option value="est un membre de la famille à charge ou un partenaire cohabitant">F -> is a dependent family member or cohabiting partner
+    <option value="f">F -> is a dependent family member or cohabiting partner
     </option>
-    <option value="réside dans l'un des pays suivants: Algeria, Australia, Canada, Georgia, Giappone, Montenegro, Marocco, Nuova Zelanda, Ruanda, Serbia, Repubblica di Corea, Tailandia, Tunisia, Uruguay;">G -> resides in one of the following countries: Algeria, Australia, Canada, Georgia, Giappone, Montenegro, Marocco, Nuova Zelanda, Ruanda, Serbia, Repubblica di Corea, Tailandia, Tunisia, Uruguay;
+    <option value="g">G -> resides in one of the following countries: Algeria, Australia, Canada, Georgia, Giappone, Montenegro, Marocco, Nuova Zelanda, Ruanda, Serbia, Repubblica di Corea, Tailandia, Tunisia, Uruguay;
     </option>
-    <option value="déménagements pour des raisons de santé, de travail, d'études ou d'urgence absolue ou pour rentrer chez eux">H -> moves for health, work, study or absolute emergency reasons or to return home
+    <option value="h">H -> moves for health, work, study or absolute emergency reasons or to return home
     </option>
 
               </select>
@@ -444,8 +455,9 @@
           <div class="form-group">
             <label for="séjours">have made stays / transits in the following countries and territories during the last 14 days at the following address
                 :</label>
-            <input type="text" class="form-control" id="adresse" name="adresse" placeholder="enter the destination address
-            ">
+            <input type="text" class="form-control" id="adresse" name="adresse" placeholder="enter the address where you have stayed
+
+            " required>
 
           </div>
           <div style="height: 10px;"></div>
@@ -457,31 +469,31 @@
 
           <div class="form-group">
             <div class="row">
-              <div class="col-6">
+              <div class="col-md-6">
             <label for="Commun">City:</label>
             <input type="text" class="form-control" id="Commun" name="Commun" placeholder="enter the destination city
-            "  value={{ville}}></div>
-            <div class="col-6">
+            "  value={{ville}} required></div>
+            <div class="col-md-6">
             <label for="code">Postal code:</label>
             <input type="text" class="form-control" id="code" name="code" placeholder="enter the postal code of the destination city
-            "  value={{code}}></div>
+            "  value={{code}} required></div>
           </div>
           </div>
           <div class="form-group">
             <div class="row">
-              <div class="col-4">
+              <div class="col-md-4">
             <label for="piazza">Street:</label>
             <input type="text" class="form-control" id="piazza" name="piazza" placeholder="enter the destination street
-            "  value={{rue}}></div>
-            <div class="col-4">
+            "  value={{rue}} required></div>
+            <div class="col-md-4">
             <label for="n">No.:</label>
             <input type="text" class="form-control" id="n" name="n" placeholder="enter the destination street number
-            "  value={{nr}}></div>
-            <div class="col-4">
+            "  value={{nr}} required></div>
+            <div class="col-md-4">
             <label for="intérieur">No. of apartment
                 :</label>
             <input type="text" class="form-control" id="intérieur" name="intérieur" placeholder="enter the apartment number
-            "  value={{appartement}}></div>
+            "  value={{appartement}} required></div>
           </div>
           </div>
 
@@ -490,8 +502,11 @@
           
           <div class="form-group">
             <label for="À">at:</label>
-            <input type="text" class="form-control" id="À" name="À" placeholder="enter the name of the person you are going to reside with
-            ">
+            <select type="text" class="form-control" id="À" name="À" placeholder="entrer le nom de personne que vous allez résider avec "  required>
+                <option value="">choose an option</option>
+                <option value="Mi casa">My house</option>
+                <option value="altro">other</option>
+                </select>
           </div>
           <div class="form-group">
             <label for="transport">Means of transport to destination
@@ -499,9 +514,9 @@
             <select type="text" class="form-control" id="transport" name="transport">
               <option value="">choose an option
             </option>
-    <option value="privé">private vehicle (car-motorcycle ...)
+    <option value="privé">with private vehicle (car-motorcycle ...)
     </option>
-    <option value="public">public vehicle (bus-taxi ...)
+    <option value="public">pedestrian
     </option>
             </select>
           </div>
@@ -536,16 +551,21 @@
               
           </div>
           <div class="form-group">
+            <label for="name">Full vehicle ownership name:</label>
+            <input type="text" class="form-control" id="name" name="véhiculeName" placeholder="enter full vehicle ownership name">
+              
+          </div>
+          <div class="form-group">
             <div class="row">
-              <div class="col-4">
+              <div class="col-md-4">
             <label for="fixe">Fixed:</label>
             <input type="text" class="form-control" id="fixe" name="fixe" placeholder="enter your landline number
             "></div>
-            <div class="col-4">
+            <div class="col-md-4">
             <label for="privé">Mobile:</label>
             <input type="text" class="form-control" id="privé" name="privé" placeholder="enter your mobile number
             " ></div>
-            <div class="col-4">
+            <div class="col-md-4">
             <label for="date">Date and time
                 :</label>
             <input type="text" class="form-control" id="date" name="date" onclick="change()"></div>

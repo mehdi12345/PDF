@@ -47,6 +47,7 @@ if(isset($_GET['search'])){
         <div class="container">
         <table class="table table-striped" >
         <tr>
+          <th scope="col">id</th>
           <th scope="col">billet</th>
           <th scope="col">passport</th>
           <th scope="col">soussigné</th>
@@ -60,6 +61,7 @@ if(isset($_GET['search'])){
           ?>
           
         <tr>
+            <td scope="col"><?php echo $row['id'] ?></td>
             <td scope="col"><?php echo $row['billet'] ?></td>
             <td scope="col"><?php echo $row['passport'] ?></td>
             <td scope="col"><?php echo $row['soussigne'] ?></td>
@@ -67,33 +69,36 @@ if(isset($_GET['search'])){
             <td scope="col"><?php echo $row['prive'] ?></td>
             <td scope="col"><?php echo $row['date'] ?></td>
             <td scope="col"><form action="PDF.php" method="post">
-                <input type="hidden" value=<?php echo $row['billet'] ?> name="billet">
-                <input type="hidden" value=<?php echo $row['passport'] ?> name="passport">
-                <input type="hidden" value=<?php echo $row['soussigne'] ?> name="soussigne">
-                <input type="hidden" value=<?php echo $row['ne'] ?> name="ne">
-                <input type="hidden" value=<?php echo $row['a'] ?> name="a">
-                <input type="hidden" value=<?php echo $row['citoyennete'] ?> name="citoyennete">
-                <input type="hidden" value=<?php echo $row['residant'] ?> name="residant">
-                <input type="hidden" value=<?php echo $row['emplacement'] ?> name="emplacement">
-                <input type="hidden" value=<?php echo $row['transport'] ?> name="transport">
-                <input type="hidden" value=<?php echo $row['type'] ?> name="type">
-                <input type="hidden" value=<?php echo $row['immatriculation'] ?> name="immatriculation">
-                <input type="hidden" value=<?php echo $row['route'] ?> name="route">
-                <input type="hidden" value=<?php echo $row['transports'] ?> name="transports">
-                <input type="hidden" value=<?php echo $row['conditions'] ?> name="conditions">
-                <input type="hidden" value=<?php echo $row['trouve'] ?> name="trouve">
-                <input type="hidden" value=<?php echo $row['raisons'] ?> name="raisons">
-                <input type="hidden" value=<?php echo $row['sejours'] ?> name="sejours">
-                <input type="hidden" value=<?php echo $row['adresse'] ?> name="adresse">
-                <input type="hidden" value=<?php echo $row['piazza'] ?> name="piazza">
-                <input type="hidden" value=<?php echo $row['n'] ?> name="n">
-                <input type="hidden" value=<?php echo $row['interieur'] ?> name="interieur">
-                <input type="hidden" value=<?php echo $row['Commun'] ?> name="Commun">
-                <input type="hidden" value=<?php echo $row['code'] ?> name="code">
-                <input type="hidden" value=<?php echo $row['Aa'] ?> name="Aa">
-                <input type="hidden" value=<?php echo $row['vehicule'] ?> name="vehicule">
-                <input type="hidden" value=<?php echo $row['fixe'] ?> name="fixe">
-                <input type="hidden" value=<?php echo $row['prive'] ?> name="prive">
+                <input type="hidden" value="<?php echo $row['billet'] ?>" name="billet">
+                <input type="hidden" value="<?php echo $row['passport'] ?>" name="passport">
+                <input type="hidden" value="<?php echo $row['soussigne'] ?>" name="soussigne">
+                <input type="hidden" value="<?php echo $row['ne'] ?>" name="ne">
+                <input type="hidden" value="<?php echo $row['a'] ?>" name="a">
+                <input type="hidden" value="<?php echo $row['citoyennete'] ?>" name="citoyennete">
+                <input type="hidden" value="<?php echo $row['ville'] ?>" name="ville">
+                <input type="hidden" value="<?php echo $row['codeone'] ?>" name="codeone">
+                <input type="hidden" value="<?php echo $row['rue'] ?>" name="rue">
+                <input type="hidden" value="<?php echo $row['nr'] ?>" name="nr">
+                <input type="hidden" value="<?php echo $row['appartement'] ?>" name="appartement">
+                <input type="hidden" value="<?php echo $row['routes'] ?>" name="routes">
+                <input type="hidden" value="<?php echo $row['transports'] ?>" name="transports">
+                <input type="hidden" value="<?php echo $row['conditions'] ?>" name="conditions">
+                <input type="hidden" value="<?php echo $row['trouve'] ?>" name="trouve">
+                <input type="hidden" value="<?php echo $row['raisons'] ?>" name="raisons">
+                <input type="hidden" value="<?php echo $row['adresse'] ?>" name="adresse">
+                <input type="hidden" value="<?php echo $row['Commun'] ?>" name="Commun">
+                <input type="hidden" value="<?php echo $row['code'] ?>" name="code">
+                <input type="hidden" value="<?php echo $row['piazza'] ?>" name="piazza">
+                <input type="hidden" value="<?php echo $row['n'] ?>" name="n">
+                <input type="hidden" value="<?php echo $row['interieur'] ?>" name="interieur">
+                
+                <input type="hidden" value="<?php echo $row['Aa'] ?>" name="Aa">
+                <input type="hidden" value="<?php echo $row['transport'] ?>" name="transport">
+                <input type="hidden" value="<?php echo $row['type'] ?>" name="type">
+                <input type="hidden" value="<?php echo $row['marque'] ?>" name="marque">
+                <input type="hidden" value="<?php echo $row['immatriculation'] ?>" name="immatriculation">
+                <input type="hidden" value="<?php echo $row['fixe'] ?>" name="fixe">
+                <input type="hidden" value="<?php echo $row['prive'] ?>" name="prive">
                 <input type="hidden" value="<?php echo $row['date'] ?>" name="date">
                 <button class="btn btn-primary" type="submit" name="submit">PDF</button>
                 </form></td>
@@ -123,6 +128,7 @@ if(isset($_GET['search'])){
       <div class="container">
       <table class="table table-striped" >
       <tr>
+        <th scope="col">id</th>
         <th scope="col">billet</th>
         <th scope="col">passport</th>
         <th scope="col">soussigné</th>
@@ -136,6 +142,7 @@ if(isset($_GET['search'])){
         ?>
         
       <tr>
+          <td scope="col"><?php echo $row['id'] ?></td>
           <td scope="col"><?php echo $row['billet'] ?></td>
           <td scope="col"><?php echo $row['passport'] ?></td>
           <td scope="col"><?php echo $row['soussigne'] ?></td>
@@ -143,33 +150,33 @@ if(isset($_GET['search'])){
           <td scope="col"><?php echo $row['prive'] ?></td>
           <td scope="col"><?php echo $row['date'] ?></td>
           <td scope="col"><form action="PDF.php" method="post">
-              <input type="hidden" value=<?php echo $row['billet'] ?> name="billet">
-              <input type="hidden" value=<?php echo $row['passport'] ?> name="passport">
-              <input type="hidden" value=<?php echo $row['soussigne'] ?> name="soussigne">
-              <input type="hidden" value=<?php echo $row['ne'] ?> name="ne">
-              <input type="hidden" value=<?php echo $row['a'] ?> name="a">
-              <input type="hidden" value=<?php echo $row['citoyennete'] ?> name="citoyennete">
+              <input type="hidden" value="<?php echo $row['billet'] ?>" name="billet">
+              <input type="hidden" value="<?php echo $row['passport'] ?>" name="passport">
+              <input type="hidden" value="<?php echo $row['soussigne'] ?>" name="soussigne">
+              <input type="hidden" value="<?php echo $row['ne'] ?>" name="ne">
+              <input type="hidden" value="<?php echo $row['a'] ?>" name="a">
+              <input type="hidden" value="<?php echo $row['citoyennete'] ?>" name="citoyennete">
               <input type="hidden" value=<?php echo $row['residant'] ?> name="residant">
               <input type="hidden" value=<?php echo $row['emplacement'] ?> name="emplacement">
-              <input type="hidden" value=<?php echo $row['transport'] ?> name="transport">
-              <input type="hidden" value=<?php echo $row['type'] ?> name="type">
-              <input type="hidden" value=<?php echo $row['immatriculation'] ?> name="immatriculation">
-              <input type="hidden" value=<?php echo $row['route'] ?> name="route">
-              <input type="hidden" value=<?php echo $row['transports'] ?> name="transports">
-              <input type="hidden" value=<?php echo $row['conditions'] ?> name="conditions">
-              <input type="hidden" value=<?php echo $row['trouve'] ?> name="trouve">
-              <input type="hidden" value=<?php echo $row['raisons'] ?> name="raisons">
+              <input type="hidden" value="<?php echo $row['transport'] ?>" name="transport">
+              <input type="hidden" value="<?php echo $row['type'] ?>" name="type">
+              <input type="hidden" value="<?php echo $row['immatriculation'] ?>" name="immatriculation">
+              <input type="hidden" value="<?php echo $row['routes'] ?>" name="routes">
+              <input type="hidden" value="<?php echo $row['transports'] ?>" name="transports">
+              <input type="hidden" value="<?php echo $row['conditions'] ?>" name="conditions">
+              <input type="hidden" value="<?php echo $row['trouve'] ?>" name="trouve">
+              <input type="hidden" value="<?php echo $row['raisons'] ?>" name="raisons">
               <input type="hidden" value=<?php echo $row['sejours'] ?> name="sejours">
-              <input type="hidden" value=<?php echo $row['adresse'] ?> name="adresse">
-              <input type="hidden" value=<?php echo $row['piazza'] ?> name="piazza">
-              <input type="hidden" value=<?php echo $row['n'] ?> name="n">
-              <input type="hidden" value=<?php echo $row['interieur'] ?> name="interieur">
-              <input type="hidden" value=<?php echo $row['Commun'] ?> name="Commun">
-              <input type="hidden" value=<?php echo $row['code'] ?> name="code">
-              <input type="hidden" value=<?php echo $row['Aa'] ?> name="Aa">
+              <input type="hidden" value="<?php echo $row['adresse'] ?>" name="adresse">
+              <input type="hidden" value="<?php echo $row['piazza'] ?>" name="piazza">
+              <input type="hidden" value="<?php echo $row['n'] ?>" name="n">
+              <input type="hidden" value="<?php echo $row['interieur'] ?>" name="interieur">
+              <input type="hidden" value="<?php echo $row['Commun'] ?>" name="Commun">
+              <input type="hidden" value="<?php echo $row['code'] ?>" name="code">
+              <input type="hidden" value="<?php echo $row['Aa'] ?>" name="Aa">
               <input type="hidden" value=<?php echo $row['vehicule'] ?> name="vehicule">
-              <input type="hidden" value=<?php echo $row['fixe'] ?> name="fixe">
-              <input type="hidden" value=<?php echo $row['prive'] ?> name="prive">
+              <input type="hidden" value="<?php echo $row['fixe'] ?>" name="fixe">
+              <input type="hidden" value="<?php echo $row['prive'] ?>" name="prive">
               <input type="hidden" value="<?php echo $row['date'] ?>" name="date">
               <button class="btn btn-primary" type="submit" name="submit">PDF</button>
               </form></td>
@@ -199,12 +206,14 @@ if (mysqli_num_rows($result) > 0) {
     <div class="container">
     <table class="table table-striped" >
     <tr>
+      <th scope="col">id</th>
       <th scope="col">billet</th>
       <th scope="col">passport</th>
       <th scope="col">soussigné</th>
       <th scope="col">numéro fixe</th>
       <th scope="col">numéro mobile</th>
       <th scope="col">date</th>
+      <th scope="col">modifier</th>
       <th scope="col">charger</th>
     </tr>
     <?php 
@@ -212,40 +221,78 @@ if (mysqli_num_rows($result) > 0) {
       ?>
       
     <tr>
+        <td scope="col"><?php echo $row['id'] ?></td>
         <td scope="col"><?php echo $row['billet'] ?></td>
         <td scope="col"><?php echo $row['passport'] ?></td>
         <td scope="col"><?php echo $row['soussigne'] ?></td>
         <td scope="col"><?php echo $row['fixe'] ?></td>
         <td scope="col"><?php echo $row['prive'] ?></td>
         <td scope="col"><?php echo $row['date'] ?></td>
+        <td scope="col"><form action="modifier.php" method="post">
+        <input type="hidden" value="<?php echo $row['billet'] ?>" name="billet">
+            <input type="hidden" value="<?php echo $row['passport'] ?>" name="passport">
+            <input type="hidden" value="<?php echo $row['soussigne'] ?>" name="soussigne">
+            <input type="hidden" value="<?php echo $row['ne'] ?>" name="ne">
+            <input type="hidden" value="<?php echo $row['a'] ?>" name="a">
+            <input type="hidden" value="<?php echo $row['citoyennete'] ?>" name="citoyennete">
+            <input type="hidden" value="<?php echo $row['ville'] ?>" name="ville">
+            <input type="hidden" value="<?php echo $row['codeone'] ?>" name="codeone">
+            <input type="hidden" value="<?php echo $row['rue'] ?>" name="rue">
+            <input type="hidden" value="<?php echo $row['nr'] ?>" name="nr">
+            <input type="hidden" value="<?php echo $row['appartement'] ?>" name="appartement">
+            <input type="hidden" value="<?php echo $row['routes'] ?>" name="routes">
+            <input type="hidden" value="<?php echo $row['transports'] ?>" name="transports">
+            <input type="hidden" value="<?php echo $row['conditions'] ?>" name="conditions">
+            <input type="hidden" value="<?php echo $row['trouve'] ?>" name="trouve">
+            <input type="hidden" value="<?php echo $row['raisons'] ?>" name="raisons">
+            <input type="hidden" value="<?php echo $row['adresse'] ?>" name="adresse">
+            <input type="hidden" value="<?php echo $row['Commun'] ?>" name="Commun">
+            <input type="hidden" value="<?php echo $row['code'] ?>" name="code">
+            <input type="hidden" value="<?php echo $row['piazza'] ?>" name="piazza">
+            <input type="hidden" value="<?php echo $row['n'] ?>" name="n">
+            <input type="hidden" value="<?php echo $row['interieur'] ?>" name="interieur">
+            <input type="hidden" value="<?php echo $row['Aa'] ?>" name="Aa">
+            <input type="hidden" value="<?php echo $row['transport'] ?>" name="transport">
+            <input type="hidden" value="<?php echo $row['type'] ?>" name="type">
+            <input type="hidden" value="<?php echo $row['marque'] ?>" name="marque">
+            <input type="hidden" value="<?php echo $row['immatriculation'] ?>" name="immatriculation">
+            <input type="hidden" value=<?php echo $row['nameveh'] ?> name="nameveh">
+            <input type="hidden" value="<?php echo $row['fixe'] ?>" name="fixe">
+            <input type="hidden" value="<?php echo $row['prive'] ?>" name="prive">
+            <input type="hidden" value="<?php echo $row['date'] ?>" name="date">
+        <button class="btn btn-primary" type="submit" name="submit">modifier</button>
+</form>
         <td scope="col"><form action="PDF.php" method="post">
-            <input type="hidden" value=<?php echo $row['billet'] ?> name="billet">
-            <input type="hidden" value=<?php echo $row['passport'] ?> name="passport">
-            <input type="hidden" value=<?php echo $row['soussigne'] ?> name="soussigne">
-            <input type="hidden" value=<?php echo $row['ne'] ?> name="ne">
-            <input type="hidden" value=<?php echo $row['a'] ?> name="a">
-            <input type="hidden" value=<?php echo $row['citoyennete'] ?> name="citoyennete">
-            <input type="hidden" value=<?php echo $row['residant'] ?> name="residant">
-            <input type="hidden" value=<?php echo $row['emplacement'] ?> name="emplacement">
-            <input type="hidden" value=<?php echo $row['transport'] ?> name="transport">
-            <input type="hidden" value=<?php echo $row['type'] ?> name="type">
-            <input type="hidden" value=<?php echo $row['immatriculation'] ?> name="immatriculation">
-            <input type="hidden" value=<?php echo $row['route'] ?> name="route">
-            <input type="hidden" value=<?php echo $row['transports'] ?> name="transports">
-            <input type="hidden" value=<?php echo $row['conditions'] ?> name="conditions">
-            <input type="hidden" value=<?php echo $row['trouve'] ?> name="trouve">
-            <input type="hidden" value=<?php echo $row['raisons'] ?> name="raisons">
-            <input type="hidden" value=<?php echo $row['sejours'] ?> name="sejours">
-            <input type="hidden" value=<?php echo $row['adresse'] ?> name="adresse">
-            <input type="hidden" value=<?php echo $row['piazza'] ?> name="piazza">
-            <input type="hidden" value=<?php echo $row['n'] ?> name="n">
-            <input type="hidden" value=<?php echo $row['interieur'] ?> name="interieur">
-            <input type="hidden" value=<?php echo $row['Commun'] ?> name="Commun">
-            <input type="hidden" value=<?php echo $row['code'] ?> name="code">
-            <input type="hidden" value=<?php echo $row['Aa'] ?> name="Aa">
-            <input type="hidden" value=<?php echo $row['vehicule'] ?> name="vehicule">
-            <input type="hidden" value=<?php echo $row['fixe'] ?> name="fixe">
-            <input type="hidden" value=<?php echo $row['prive'] ?> name="prive">
+            <input type="hidden" value="<?php echo $row['billet'] ?>" name="billet">
+            <input type="hidden" value="<?php echo $row['passport'] ?>" name="passport">
+            <input type="hidden" value="<?php echo $row['soussigne'] ?>" name="soussigne">
+            <input type="hidden" value="<?php echo $row['ne'] ?>" name="ne">
+            <input type="hidden" value="<?php echo $row['a'] ?>" name="a">
+            <input type="hidden" value="<?php echo $row['citoyennete'] ?>" name="citoyennete">
+            <input type="hidden" value="<?php echo $row['ville'] ?>" name="ville">
+            <input type="hidden" value="<?php echo $row['codeone'] ?>" name="codeone">
+            <input type="hidden" value="<?php echo $row['rue'] ?>" name="rue">
+            <input type="hidden" value="<?php echo $row['nr'] ?>" name="nr">
+            <input type="hidden" value="<?php echo $row['appartement'] ?>" name="appartement">
+            <input type="hidden" value="<?php echo $row['routes'] ?>" name="routes">
+            <input type="hidden" value="<?php echo $row['transports'] ?>" name="transports">
+            <input type="hidden" value="<?php echo $row['conditions'] ?>" name="conditions">
+            <input type="hidden" value="<?php echo $row['trouve'] ?>" name="trouve">
+            <input type="hidden" value="<?php echo $row['raisons'] ?>" name="raisons">
+            <input type="hidden" value="<?php echo $row['adresse'] ?>" name="adresse">
+            <input type="hidden" value="<?php echo $row['Commun'] ?>" name="Commun">
+            <input type="hidden" value="<?php echo $row['code'] ?>" name="code">
+            <input type="hidden" value="<?php echo $row['piazza'] ?>" name="piazza">
+            <input type="hidden" value="<?php echo $row['n'] ?>" name="n">
+            <input type="hidden" value="<?php echo $row['interieur'] ?>" name="interieur">
+            <input type="hidden" value="<?php echo $row['Aa'] ?>" name="Aa">
+            <input type="hidden" value="<?php echo $row['transport'] ?>" name="transport">
+            <input type="hidden" value="<?php echo $row['type'] ?>" name="type">
+            <input type="hidden" value="<?php echo $row['marque'] ?>" name="marque">
+            <input type="hidden" value="<?php echo $row['immatriculation'] ?>" name="immatriculation">
+            <input type="hidden" value=<?php echo $row['nameveh'] ?> name="nameveh">
+            <input type="hidden" value="<?php echo $row['fixe'] ?>" name="fixe">
+            <input type="hidden" value="<?php echo $row['prive'] ?>" name="prive">
             <input type="hidden" value="<?php echo $row['date'] ?>" name="date">
             <button class="btn btn-primary" type="submit" name="submit">PDF</button>
             </form></td>
@@ -263,7 +310,6 @@ if (mysqli_num_rows($result) > 0) {
 }
 ?>
         </div>
-
 <?php
 mysqli_close($conn);}
 ?>
